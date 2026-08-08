@@ -8,7 +8,7 @@ if not st.experimental_user["email_verified"]:
 with st.sidebar:
     st.header(f"Logged in with {st.experimental_user.email}")
     if st.button("🔓 Logout"):
-        st.logout()
+        st.logout(st.secrets["auth"]["redirect_uri"])
     with st.expander(
         "Checkout your `st.experimental_user` local ID Token from the Identity Provider, securely stored in a cookie that expires in 30 days"
     ):
